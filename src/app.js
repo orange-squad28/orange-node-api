@@ -1,5 +1,6 @@
 import express from "express";
 import dbTrilhas from "./config/conexaoBD.js";
+import trilhas from "./models/Trilha.js";
 
 dbTrilhas.on("error", console.error.bind(console, "Erro de Conexão:"));
 dbTrilhas.once("open", () => {
@@ -15,8 +16,15 @@ app.get("/", (req, res) => {
 });
 
 app.get("/trilhas", (req, res) => {
-  res.status(200).json(trilhas);
+  trilhas.find((err, trilhas) => {
+  
+        res.status(200).json(trilhas);
+    }
+
+
+);
 });
+
 
 app.get("/trilhas/:id", (req, res) => {
   let indice = buscarTrilhaPorId(req.params.id);

@@ -12,6 +12,6 @@ const trilhaSchema = new mongoose.Schema(
         numeroDeHoras: {type: Number, required: true},
     });
 
-const trilhaModel = mongoose.model("trilhas", trilhaSchema);
+const trilhas = mongoose.model("trilhas", trilhaSchema);
 
-export default trilhaModel;
+export default trilhas;
