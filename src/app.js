@@ -21,35 +21,4 @@ app.get("/", (req, res) => {
 });
 
 
-
-
-app.get("/trilhas/:id", (req, res) => {
-  let indice = buscarTrilhaPorId(req.params.id);
-
-  res.json(trilhas[indice]);
-});
-
-app.post("/trilhas", (req, res) => {
-  const trilha = req.body;
-  trilhas.push(trilha);
-  res.status(201).send("Trilha criada com sucesso!");
-});
-
-app.put("/trilhas/:id", (req, res) => {
-  let indice = buscarTrilhaPorId(req.params.id);
-  trilhas[indice].nome = req.body.nome;
-  res.json(trilhas);
-});
-
-function buscarTrilhaPorId(id) {
-  return trilhas.findIndex((trilha) => trilha.id == id);
-}
-
-app.delete("/trilhas/:id", (req, res) => {
-  let { id } = req.params;
-  let indice = buscarTrilhaPorId(id);
-  trilhas.splice(indice, 1);
-  res.json(`Trilha com id ${id} deletada com sucesso!`);
-});
-
 export default app;
