@@ -1,6 +1,7 @@
 import express from "express";
 import trilhasRoutes from "./trilhasRoutes.js";
 import adminRoutes from "./adminRoutes.js";
+import alunosRoutes from "./alunosRoutes.js";
 
 const routes = (app) => {
 app.route('/').get((req, res) => {
@@ -10,7 +11,8 @@ app.route('/').get((req, res) => {
 app.use(
     express.json(),
     trilhasRoutes,
-    adminRoutes
+    adminRoutes,
+    alunosRoutes
 );
 
 }
