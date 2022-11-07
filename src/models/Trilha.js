@@ -7,9 +7,9 @@ const trilhaSchema = new mongoose.Schema(
         cursos : {type: Array,required: true},
         autor: {type: String, required: true},
         estaAtivo: {type: Boolean, required: true},
-        dataCriacao: {type: Date, required: true},
-        dataAtualizacao: {type: Date, required: true},
-        numeroDeHoras: {type: Number, required: true},
+        dataCriacao: {type: Date},
+        dataAtualizacao: {type: Date},
+        numeroDeHoras: {type: Number},
     });
 
 const trilhas = mongoose.model("trilhas", trilhaSchema);
