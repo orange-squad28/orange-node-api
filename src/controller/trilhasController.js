@@ -41,7 +41,7 @@ class TrilhaController {
         res.status(200).send({ message: "Trilha atualizada com sucesso!" });
       } else {
         res
-          .status(500)
+          .status(400)
           .send({ message: `${err.message}: Erro ao atualizar trilha` });
       }
     });
