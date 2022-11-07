@@ -15,15 +15,7 @@ app.get("/", (req, res) => {
   res.status(200).send("Orange Evolution");
 });
 
-app.get("/trilhas", (req, res) => {
-  trilhas.find((err, trilhas) => {
-  
-        res.status(200).json(trilhas);
-    }
 
-
-);
-});
 
 
 app.get("/trilhas/:id", (req, res) => {
