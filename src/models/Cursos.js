@@ -6,7 +6,7 @@ const cursoSchema = new mongoose.Schema(
         id : {type: String},
         titulo : {type: String, required: true},
         autor: {type: String, required: true},
-        imagen: {type: String, required: true},
+        imagem: {type: String, required: true},
         estaAtivo: {type: Boolean, required: true},
         dataCriacao: {type: Date},
         dataAtualizacao: {type: Date},
