@@ -10,5 +10,7 @@ const administradoresSchema = new mongoose.Schema(
         cargo: {type: String, required: true}
     });
 
-const administradores = mongoose.model("administradores", administradoresSchema);
+const admins = mongoose.model("admins", administradoresSchema);
+
+export default admins;
 
