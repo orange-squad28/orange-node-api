@@ -22,7 +22,9 @@ class AdminController {
     static cadastrarAdmin(req, res) {
         let admin = new admins(req.body);
 
-        administrador.save((err) => {
+
+
+        admin.save((err) => {
             if (err) {
                 res
                     .status(500)
