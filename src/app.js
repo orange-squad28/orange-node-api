@@ -43,5 +43,14 @@ function buscarTrilhaPorId(id) {
     return trilhas.findIndex(trilha => trilha.id == id);
 }
 
+app.delete("/trilhas/:id", (req, res) => {
+    let {id} = req.params;
+    let indice = buscarTrilhaPorId(id);
+    trilhas.splice(indice, 1);
+   res.json(`Trilha com id ${id} deletada com sucesso!`);
+
+    
+});
+
 
 export default app;
