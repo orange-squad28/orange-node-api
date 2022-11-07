@@ -1,20 +1,9 @@
-const http = require('http');
-const port = 8000;
+import app from "./src/app.js";
+const port = process.env.PORT || 8000;
 
-const rotas = {
-    '/': 'Trilhas',
-    '/ux-ui': 'Trinha de UX/UI Design',
-    '/qa': 'Trilha de QA',
-    '/dev': 'Trilha de Desenvolvimento Full Stack'
-};
 
-const server = http.createServer((req, res) => {
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end(rotas[req.url]);
 
-});
-
-server.listen(port, () => {
+app.listen(port, () => {
     console.log(`Server running at port `+port);
 });
 

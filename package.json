@@ -1,5 +1,6 @@
 {
   "name": "orange-node-api",
+  "type": "module",
   "version": "1.0.0",
   "description": "A node api to the project Orange Evolution of Hackaton Orange Juice",
   "main": "index.js",
@@ -10,6 +11,7 @@
   "author": "Rodrigo Alexandre",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.17.3",
     "nodemon": "^2.0.15"
   }
 }
