@@ -8,6 +8,7 @@ const cursoSchema = new mongoose.Schema(
         autor: {type: String, required: true},
         imagem: {type: String, required: true},
         estaAtivo: {type: Boolean, required: true},
+        origemConteudo: {type: String, required: true},
         dataCriacao: {type: Date},
         dataAtualizacao: {type: Date},
         duracao: {type: Number},
