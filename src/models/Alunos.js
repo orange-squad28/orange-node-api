@@ -7,7 +7,7 @@ const alunoSchema = new mongoose.Schema(
         nome : {type: String, required: true},
         email : {type: String, required: true},
         senha : {type: String, required: true},
-        cursos: {type: Array},
+        trilhas: {type: mongoose.Schema.Types.ObjectId, ref: 'trilhas', required: true}
     });
 
 const alunos = mongoose.model("alunos", alunoSchema);
