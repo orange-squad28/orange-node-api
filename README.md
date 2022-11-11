@@ -212,6 +212,21 @@ https://orange-node-api.herokuapp.com/
 |           |          | 'id': String     **Required**,    |
 |           |          | }                                 |
 
+
+
+#### Listar Cursos da Trilha por Id
+
+```http
+  GET /trilhas/cursos/:id
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `string` | **Required**. Id da Trilha        |
+
+
+
+
 #### Atualizar Trilha
 
 ```http
