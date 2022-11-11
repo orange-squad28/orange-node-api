@@ -8,6 +8,7 @@ router
   .get("/trilhas/:id", TrilhaController.listarTrilhaPorId)
   .post("/trilhas", TrilhaController.cadastrarTrilha)
   .put("/trilhas/:id", TrilhaController.atualizarTrilha)
+  .patch("/trilhas/cadastrar-curso/:id", TrilhaController.inserirCursoNaTrilha)
   .delete("/trilhas/:id", TrilhaController.apagarTrilha);
 
 

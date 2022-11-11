@@ -195,7 +195,22 @@ https://orange-node-api.herokuapp.com/
 |           |          | 'numeroDeHoras': Boolean          |
 |           |          | }                                 |
 
+#### Cadastrar Curso em uma Trilha por Id
 
+```http
+  PATCH /alunos/matricular/:id
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `string` | **Required**. Id da Trilha |
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+|           |          | Id do Curso                      |
+| `json`    | `json  ` | {                                 |
+|           |          | 'id': String     **Required**,    |
+|           |          | }                                 |
 
 #### Atualizar Trilha
 
