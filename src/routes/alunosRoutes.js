@@ -14,3 +14,6 @@ router
 
 
 export default router;
+
+
+// .get('/alunos/cursos/:id', AlunosController.listarCursosDoAluno)
