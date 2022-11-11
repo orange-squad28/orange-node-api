@@ -36,21 +36,12 @@ class AlunosController {
     });
     }
 
-//deve listar todas os cursos das trilhas que o aluno está matriculado
-// static listarCursosDoAluno(req, res) {
-//     const id = req.params.id;
 
 //TODO: deve determinar o nivel do aluno de acordo com a quantidade de cursos concluidos
 // 30% Nivel Iniciante
 // 60% Nivel Intermediario
 // 100% Nivel Avançado
 // trilhas.cursos.length 
-
-
-
-
-
-
 
 
 
