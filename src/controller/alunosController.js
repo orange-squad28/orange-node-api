@@ -1,11 +1,15 @@
 import alunos from "../models/Alunos.js";
 import trilhas from "../models/Trilha.js";
+import cursos from '../models/Cursos.js';
 
 class AlunosController {
   static listarAlunos(req, res) {
-    alunos.find().populate('trilhas').exec((err, alunos) => {
-      res.status(200).json(alunos);
-    });
+    alunos
+      .find()
+      .populate("trilhas")
+      .exec((err, alunos) => {
+        res.status(200).json(alunos);
+      });
   }
 
   static listarAlunoPorId(req, res) {
@@ -20,30 +24,29 @@ class AlunosController {
     });
   }
 
-
   static listarTrilhasDoAluno(req, res) {
     const id = req.params.id;
 
     alunos.findById(id, (err, alunos) => {
-        if (err) {
-            res
-                .status(400)
-                .send({ message: `${err.message}: Erro ao buscar aluno` });
-        }
-        res.status(200).send(alunos.trilhas);
-
+      if (err) {
+        res
+          .status(400)
+          .send({ message: `${err.message}: Erro ao buscar aluno` });
+      }
+      res
+        .status(200)
+        .send(alunos.trilhas)
         
+        
+     
     });
-    }
+  }
 
-
-//TODO: deve determinar o nivel do aluno de acordo com a quantidade de cursos concluidos
-// 30% Nivel Iniciante
-// 60% Nivel Intermediario
-// 100% Nivel Avançado
-// trilhas.cursos.length 
-
-
+  //TODO: deve determinar o nivel do aluno de acordo com a quantidade de cursos concluidos
+  // 30% Nivel Iniciante
+  // 60% Nivel Intermediario
+  // 100% Nivel Avançado
+  // trilhas.cursos.length
 
   static cadastrarAluno(req, res) {
     let aluno = new alunos(req.body);
@@ -78,23 +81,25 @@ class AlunosController {
     const idDaTrilha = req.body.id;
 
     const trilha = trilhas.findById(idDaTrilha, (err, trilha) => {
-            if (err) {
-            res.status(400).send({ message: `${err.message}: Erro ao buscar trilha` });
-        } else { return trilha }
-      
+      if (err) {
+        res
+          .status(400)
+          .send({ message: `${err.message}: Erro ao buscar trilha` });
+      } else {
+        return trilha;
+      }
     });
 
-
     alunos.findByIdAndUpdate(
-   idDoAluno ,
-      { $push: { trilhas : idDaTrilha } },
-           (err) => {
+      idDoAluno,
+      { $push: { trilhas: idDaTrilha } },
+      (err) => {
         if (!err) {
           res.status(200).send({ message: "Aluno matriculado com sucesso!" });
         } else {
-          res
-            .status(400)
-            .send({ message: `${err.message}: Erro ao matricular aluno de novo` });
+          res.status(400).send({
+            message: `${err.message}: Erro ao matricular aluno de novo`,
+          });
         }
       }
     );
