@@ -7,7 +7,7 @@ const alunoSchema = new mongoose.Schema(
         nome : {type: String, required: true},
         email : {type: String, required: true},
         senha : {type: String, required: true},
-        trilhas: {type: mongoose.Schema.Types.ObjectId, ref: 'trilhas'},
+        trilhas: [{type: mongoose.Schema.Types.ObjectId, ref: 'trilhas'}],
         nivel: {type: String, required: false},
     },
     );

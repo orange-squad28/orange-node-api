@@ -20,23 +20,38 @@ class AlunosController {
     });
   }
 
-  // deve listar as trilhas que o aluno está matriculado
-    // static listarTrilhasDoAluno(req, res) {
-    //     const id = req.params.id;
-    //     alunos.findById(id, (err, alunos) => {
-    //         if (err) {
-    //             res
-    //                 .status(400)
-    //                 .send({ message: `${err.message}: Erro ao buscar aluno` });
-    //         }
-    //         res.status(200).send(alunos);
-    //     });
+
+  static listarTrilhasDoAluno(req, res) {
+    const id = req.params.id;
+
+    alunos.findById(id, (err, alunos) => {
+        if (err) {
+            res
+                .status(400)
+                .send({ message: `${err.message}: Erro ao buscar aluno` });
+        }
+        res.status(200).send(alunos.trilhas);
+
+        
+    });
+    }
 
 //deve listar todas os cursos das trilhas que o aluno está matriculado
 // static listarCursosDoAluno(req, res) {
 //     const id = req.params.id;
 
-    
+//TODO: deve determinar o nivel do aluno de acordo com a quantidade de cursos concluidos
+// 30% Nivel Iniciante
+// 60% Nivel Intermediario
+// 100% Nivel Avançado
+// trilhas.cursos.length 
+
+
+
+
+
+
+
 
 
   static cadastrarAluno(req, res) {

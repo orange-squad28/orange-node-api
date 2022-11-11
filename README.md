@@ -89,6 +89,16 @@ https://orange-node-api.herokuapp.com/
 | :-------- | :------- | :-------------------------------- |
 | `id`      | `string` | **Required**. Id do Administrador |
 
+#### Listar Trilhas do Aluno por Id
+
+```http
+  GET /alunos/trilhas/:id
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `string` | **Required**. Id do Aluno         |
+
 
 #### Cadastrar Aluno
 
@@ -105,6 +115,23 @@ https://orange-node-api.herokuapp.com/
 |           |          | 'cursos': Array                   |
 |           |          | }                                 |
 
+
+#### Matricular Aluno em um a trilha Id
+
+```http
+  PATCH /alunos/matricular/:id
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `string` | **Required**. Id do Aluno |
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+|           |          | Id da Trilha                      |
+| `json`    | `json  ` | {                                 |
+|           |          | 'id': String     **Required**,    |
+|           |          | }                                 |
 
 
 #### Atualizar Aluno
