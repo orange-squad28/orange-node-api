@@ -87,8 +87,8 @@ class AlunosController {
           .send({ message: `${err.message}: Erro ao buscar trilha` });
       } else {
         return trilha;
-      }
-    });
+    }
+  });
 
     alunos.findByIdAndUpdate(
       idDoAluno,
