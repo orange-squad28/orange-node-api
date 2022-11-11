@@ -8,6 +8,7 @@ router
     .get('/alunos/:id', AlunosController.listarAlunoPorId)
     .post('/alunos', AlunosController.cadastrarAluno)
     .put('/alunos/:id', AlunosController.atualizarAluno)
+    .patch('/alunos/matricular/:id', AlunosController.matricularAlunoNaTrilha)
     .delete('/alunos/:id', AlunosController.apagarAluno);
 
 

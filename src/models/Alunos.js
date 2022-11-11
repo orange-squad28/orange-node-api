@@ -7,10 +7,13 @@ const alunoSchema = new mongoose.Schema(
         nome : {type: String, required: true},
         email : {type: String, required: true},
         senha : {type: String, required: true},
-        trilhas: {type: mongoose.Schema.Types.ObjectId, ref: 'trilhas', required: true}
-    });
+        trilhas: {type: mongoose.Schema.Types.ObjectId, ref: 'trilhas'}
+    },
+    );
 
 const alunos = mongoose.model("alunos", alunoSchema);
 
 export default alunos;
+
+
     

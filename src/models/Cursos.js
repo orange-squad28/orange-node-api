@@ -7,6 +7,7 @@ const cursoSchema = new mongoose.Schema(
         titulo : {type: String, required: true},
         autor: {type: String, required: true},
         imagem: {type: String, required: true},
+        descritivoDaImagem : {type: String, required: true},
         estaAtivo: {type: Boolean, required: true},
         origemConteudo: {type: String, required: true},
         dataCriacao: {type: Date},
