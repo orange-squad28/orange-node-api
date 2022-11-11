@@ -23,6 +23,22 @@ class TrilhaController {
     });
   }
 
+  static listarCursosDaTrilha(req, res) {
+    const id = req.params.id;
+
+    trilhas.findById(id, (err, trilha) => {
+      if (err) {
+        res
+          .status(400)
+          .send({ message: `${err.message}: Erro ao buscar trilha` });
+      }
+      res
+        .status(200)
+        .send(trilha.cursos)
+        
+    });
+  }
+
   static cadastrarTrilha(req, res) {
     let trilha = new trilhas(req.body);
 
