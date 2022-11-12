@@ -6,6 +6,7 @@ const trilhaSchema = new mongoose.Schema(
         titulo : {type: String, required: true},
         cursos : [{type: mongoose.Schema.Types.ObjectId, ref: 'cursos', required: true}],
         descricao : {type: String, required: true},
+        topicos : [{type: String, required: true}],
         imagem : {type: String, required: true},
         descritivoDaImagem : {type: String, required: true},
         autor: {type: String, required: true},
