@@ -35,7 +35,9 @@ class AlunosController {
       }
       res
         .status(200)
-        .send(alunos.trilhas)
+        .json(alunos.trilhas)
+
+        return alunos.trilhas;
         
         
      
