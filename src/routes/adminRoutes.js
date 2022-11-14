@@ -5,6 +5,7 @@ const router = express.Router();
 
 router
     .get('/admins', AdminController.listarAdmins)
+    .get('/admins/autentica/', AdminController.autentica)
     .get('/admins/:id', AdminController.listarAdminPorId)
     .get('/admins/login/:id', AdminController.souAdmin)
     .post('/admins', AdminController.cadastrarAdmin)
