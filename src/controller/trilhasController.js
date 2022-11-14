@@ -19,7 +19,7 @@ class TrilhaController {
           .status(400)
           .send({ message: `${err.message}: Erro ao buscar trilha` });
       }
-      res.status(200).send(trilhas.cursos);
+      res.status(200).json(trilhas);
     });
   }
 

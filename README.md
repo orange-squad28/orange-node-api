@@ -18,7 +18,17 @@ https://orange-node-api.herokuapp.com/
 ```http
   GET /admins
 ```
+### Verifica se o usuario é um administrador
 
+```http
+GET /admins/login/:id
+```
+
+Retorna true se o  id for de um administrador 
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `string` | **Required**. Id do Administrador |
 #### Listar Administrador por Id
 
 ```http
