@@ -36,8 +36,6 @@ class AlunosController {
       res
         .status(200)
         .json(alunos.trilhas)
-
-        return alunos.trilhas;
         
         
      

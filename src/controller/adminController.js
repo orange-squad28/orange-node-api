@@ -1,4 +1,5 @@
 import admins from "../models/Administradores.js";
+import alunos from "../models/Alunos.js";
 
 class AdminController {
     static listarAdmins(req, res) {
@@ -6,6 +7,17 @@ class AdminController {
             res.status(200).json(admins);
         });
     }
+
+    static souAdmin(req, res ){
+        const id = req.params.id;
+        admins.findById(id,(err, admins) => {
+            if(err){
+                res.status(400).message({ message: `${err.message}: Erro ao buscar administrador` });
+            } else {
+                res.status(200).send(true)
+            }
+        })
+    };
 
     static listarAdminPorId(req, res) {
         const id = req.params.id;
