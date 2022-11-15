@@ -3,21 +3,21 @@ import trilhasRoutes from "./trilhasRoutes.js";
 import adminRoutes from "./adminRoutes.js";
 import alunosRoutes from "./alunosRoutes.js";
 import cursosRoutes from "./cursosRoutes.js";
+import loginRoutes from "./loginRoutes.js";
 
 const routes = (app) => {
-app.route('/').get((req, res) => {
+  app.route("/").get((req, res) => {
     res.status(200).send("Orange Evolution - teste de rotas");
-});
+  });
 
-app.use(
+  app.use(
     express.json(),
     trilhasRoutes,
     adminRoutes,
     alunosRoutes,
-    cursosRoutes
-);
-
-}
+    cursosRoutes,
+    loginRoutes
+  );
+};
 
 export default routes;
-
