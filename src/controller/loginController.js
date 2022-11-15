@@ -6,8 +6,8 @@ import AlunosController from "../controller/alunosController.js";
 
 class LoginController {
   static async logar(req, res) {
-    const email = req.body.email;
-    const senha = req.body.senha;
+    const email = req.query?.email || req.params?.email;
+    const senha = req.query?.senha || req.params?.senha;
     alunos
       .find()
       .populate("trilhas")
